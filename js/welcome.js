@@ -107,10 +107,13 @@ async function startWelcomeScene() {
     45,
   );
 
-  gsap.to(".tap-indicator", {
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    ease: "power2.out",
-  });
+  // Let the user enjoy the welcome screen
+  await new Promise((resolve) => setTimeout(resolve, 1200));
+
+  // Start transition to the next scene
+  startPinkTransition();
+}
+
+function startPinkTransition() {
+  console.log("Starting Pink Scene...");
 }

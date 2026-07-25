@@ -86,18 +86,6 @@
   min-height: 50px;
 }
 
-.tap-indicator {
-  margin-top: 60px;
-
-  color: #ff6bb0;
-
-  font-size: 1.1rem;
-
-  letter-spacing: 2px;
-
-  opacity: 0;
-}
-
 .welcome-heart {
   opacity: 0;
 

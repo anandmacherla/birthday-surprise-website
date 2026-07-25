@@ -384,26 +384,6 @@ body {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
 }
 
-.tap-indicator {
-  font-family: "Outfit", sans-serif;
-
-  font-size: 1.15rem;
-
-  color: #ff72b5;
-
-  letter-spacing: 4px;
-
-  font-weight: 600;
-
-  margin-top: 70px;
-
-  text-transform: uppercase;
-
-  animation:
-    breathe 2s ease-in-out infinite,
-    glowTouch 3s ease infinite;
-}
-
 .sub1 {
   font-size: 1.45rem;
   color: #fffafc;
