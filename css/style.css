@@ -1,0 +1,253 @@
+/* ==========================================
+   RESET STYLES
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   HTML & BODY
+========================================== */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #050505, #0b0618, #07111d, #050505);
+
+  background-size: 300% 300%;
+
+  animation: backgroundMove 15s ease infinite;
+}
+
+/* ==========================================
+   MAIN APPLICATION
+========================================== */
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ==========================================
+   SCREEN SYSTEM
+========================================== */
+
+.screen {
+  position: absolute;
+  inset: 0;
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.loader-container {
+  text-align: center;
+  width: min(90%, 500px);
+}
+
+.loader-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+
+  animation: fadeIn 1.5s ease;
+}
+
+.loader-heart {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 25px 0;
+}
+
+.loader-heart img {
+  width: 120px;
+
+  height: auto;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  transform-origin: center center;
+
+  animation: heartBeat 1.5s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 10px rgba(255, 110, 170, 0.45))
+    drop-shadow(0 0 25px rgba(255, 110, 170, 0.35))
+    drop-shadow(0 0 45px rgba(255, 110, 170, 0.2));
+
+  z-index: 2;
+}
+
+.loader-heart::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    rgba(255, 90, 150, 0.55),
+    rgba(255, 90, 150, 0.15),
+    transparent 70%
+  );
+
+  animation: glowBreath 3s ease-in-out infinite;
+
+  z-index: 1;
+}
+
+.loader-subtitle {
+  font-size: 2.1rem;
+  color: #cfcfcf;
+  margin-bottom: 35px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.progress-fill {
+  width: 0%;
+
+  height: 100%;
+
+  position: relative;
+
+  border-radius: inherit;
+
+  background: linear-gradient(90deg, #ff4d8d, #ff89c6, #ff4d8d);
+
+  background-size: 200% 100%;
+
+  animation: shimmer 2s linear infinite;
+
+  box-shadow: 0 0 18px rgba(255, 80, 140, 0.55);
+}
+
+/* ==========================================
+   PARTICLE LAYER
+========================================== */
+
+#particle-layer {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  animation: floatParticle linear infinite;
+
+  opacity: 0.8;
+}
+
+/* Small Dust */
+
+.dust {
+  width: 2px;
+
+  height: 2px;
+
+  background: white;
+
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+}
+
+/* Pink Glow */
+
+.glow {
+  width: 6px;
+
+  height: 6px;
+
+  background: #ff77aa;
+
+  filter: blur(1px);
+
+  opacity: 0.35;
+}
+
+/* Spark */
+
+.spark {
+  width: 3px;
+
+  height: 3px;
+
+  background: white;
+
+  transform: rotate(45deg);
+
+  box-shadow:
+    0 0 12px white,
+    0 0 18px #ff8fb8;
+}
+
+/* ===============================
+   GSAP INITIAL STATE
+================================ */
+
+#loader-logo,
+#loader-heart,
+#loader-message,
+#loader-progress-wrapper {
+  opacity: 0;
+
+  transform: translateY(30px);
+}
+
+#loader-screen {
+  transition: opacity 0.8s;
+}

@@ -1,24 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>❤️ Birthday Surprise ❤️</title>
 
-    <meta charset="UTF-8">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <title>Birthday Surprise ❤️</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet"
-          href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- Main Application -->
+    <div id="app">
+      <!-- Global Layers -->
+      <div id="background-layer"></div>
+      <div id="particle-layer"></div>
+      <div id="confetti-layer"></div>
 
-    <script src="script.js"></script>
+      <!-- ==========================
+             1. Loading Screen
+        =========================== -->
+      <section id="loader-screen" class="screen active">
+        <div class="loader-container">
+          <!-- Logo Section -->
+          <div id="loader-logo" class="loader-logo">
+            <h1 class="loader-title">Birthday Surprise</h1>
 
-</body>
+            <div id="loader-heart" class="loader-heart">
+              <img
+                src="assets/images/Heart/heart1.png"
+                alt="3D Heart"
+                id="heart-image"
+              />
+            </div>
+          </div>
 
+          <!-- Loading Message -->
+          <div id="loader-message" class="loader-message">
+            <p class="loader-subtitle">
+              ✨ <span id="loading-text"> Crafting your surprise... </span>
+            </p>
+          </div>
+
+          <!-- Progress -->
+          <div id="loader-progress-wrapper" class="loader-progress-wrapper">
+            <div class="progress-bar">
+              <div id="loader-progress" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================
+             2. Welcome Screen
+        =========================== -->
+      <section id="welcome-screen" class="screen"></section>
+
+      <!-- ==========================
+             3. Countdown Screen
+        =========================== -->
+      <section id="countdown-screen" class="screen"></section>
+
+      <!-- ==========================
+             4. Birthday Screen
+        =========================== -->
+      <section id="birthday-screen" class="screen"></section>
+
+      <!-- ==========================
+             5. Ready Screen
+        =========================== -->
+      <section id="ready-screen" class="screen"></section>
+
+      <!-- ==========================
+             6. Balloon Screen
+        =========================== -->
+      <section id="balloon-screen" class="screen"></section>
+
+      <!-- ==========================
+             7. Cake Screen
+        =========================== -->
+      <section id="cake-screen" class="screen"></section>
+
+      <!-- ==========================
+             8. Wish Screen
+        =========================== -->
+      <section id="wish-screen" class="screen"></section>
+
+      <!-- ==========================
+             9. Bouquet Screen
+        =========================== -->
+      <section id="bouquet-screen" class="screen"></section>
+
+      <!-- ==========================
+             10. Gallery Screen
+        =========================== -->
+      <section id="gallery-screen" class="screen"></section>
+
+      <!-- ==========================
+             11. Letter Screen
+        =========================== -->
+      <section id="letter-screen" class="screen"></section>
+
+      <!-- ==========================
+             12. Gift Screen
+        =========================== -->
+      <section id="gift-screen" class="screen"></section>
+
+      <!-- ==========================
+             13. Final Screen
+        =========================== -->
+      <section id="final-screen" class="screen"></section>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/birthday.js"></script>
+    <script src="js/balloons.js"></script>
+    <script src="js/candle.js"></script>
+    <script src="js/bouquet.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/letter.js"></script>
+    <script src="js/gift.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
