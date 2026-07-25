@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(loader);
 
       finishLoader();
+
+      setTimeout(() => {
+        startWelcomeScene();
+      }, 1800);
     }
   }, 35);
 });
@@ -77,7 +81,7 @@ function createParticles() {
 
   const particleTypes = ["dust", "glow", "spark"];
 
-  for (let i = 0; i < CONFIG.particles; i++) {
+  for (let i = 0; i < CONFIG.loader.particles; i++) {
     const particle = document.createElement("div");
 
     particle.classList.add("particle");
@@ -103,47 +107,42 @@ function finishLoader() {
   const tl = gsap.timeline();
 
   tl.to("#loader-heart", {
-    scale: 1.25,
-
+    scale: 1.15,
     duration: 0.18,
-
     ease: "power2.out",
   })
 
     .to("#loader-heart", {
       scale: 1,
-
       duration: 0.35,
-
       ease: "elastic.out(1,0.4)",
     })
-
-    .to(
-      "#particle-layer",
-      {
-        opacity: 0,
-
-        duration: 0.7,
-      },
-      "-=0.2",
-    )
 
     .to(
       ".loader-container",
       {
         opacity: 0,
-
-        y: -25,
-
-        duration: 1,
-
+        duration: 0.8,
         ease: "power2.inOut",
       },
-      "-=0.3",
+      "+=0.1",
+    )
+
+    .to(
+      "#particle-layer",
+      {
+        opacity: 0,
+        duration: 0.6,
+      },
+      "<",
     )
 
     .to("#loader-screen", {
       opacity: 0,
-      pointerEvents: "none",
+      duration: 0.5,
+
+      onComplete: () => {
+        document.getElementById("loader-screen").style.display = "none";
+      },
     });
 }

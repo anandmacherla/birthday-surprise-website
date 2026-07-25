@@ -16,11 +16,17 @@
       rel="stylesheet"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
   </head>
 
   <body>
@@ -68,7 +74,31 @@
       <!-- ==========================
              2. Welcome Screen
         =========================== -->
-      <section id="welcome-screen" class="screen"></section>
+      <!-- Romantic Welcome Screen -->
+
+      <section id="welcome-screen" class="screen">
+        <div class="welcome-container">
+          <div class="welcome-stars"></div>
+
+          <div class="welcome-content">
+            <div class="welcome-heart">
+              <img src="assets/images/hearts/heart1.png" alt="Heart" />
+            </div>
+
+            <h1 id="typing-title"></h1>
+
+            <h2 id="typing-name"></h2>
+
+            <div id="typing-subtitle">
+              <div class="sub-line sub1"></div>
+              <div class="sub-line sub2"></div>
+              <div class="sub-line sub3"></div>
+            </div>
+
+            <div class="tap-indicator">❤️ Touch Me ❤️</div>
+          </div>
+        </div>
+      </section>
 
       <!-- ==========================
              3. Countdown Screen
@@ -130,6 +160,7 @@
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/loader.js"></script>
+    <script src="js/welcome.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/birthday.js"></script>
     <script src="js/balloons.js"></script>

@@ -115,3 +115,135 @@
     opacity: 0;
   }
 }
+
+@keyframes romanticGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes romanticGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(0.95);
+
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.15);
+
+    opacity: 0.9;
+  }
+}
+
+/* ==================================
+   WELCOME HEART FLOAT
+================================== */
+
+@keyframes welcomeHeartFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ==================================
+   WELCOME HEART BEAT
+================================== */
+
+@keyframes welcomeHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.06);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.welcome-heart.beating img {
+  animation: welcomeHeartbeat 1s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(-8px);
+
+    opacity: 1;
+  }
+}
+
+@keyframes glowTouch {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(255, 100, 170, 0.25);
+  }
+
+  50% {
+    text-shadow:
+      0 0 12px rgba(255, 120, 190, 0.65),
+      0 0 28px rgba(255, 80, 170, 0.4);
+  }
+}
