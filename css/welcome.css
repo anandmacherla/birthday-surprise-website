@@ -86,14 +86,13 @@
   min-height: 50px;
 }
 
+.welcome-heart-wrapper {
+  margin-bottom: 45px;
+
+  animation: welcomeHeartFloat 5s ease-in-out infinite;
+}
+
 .welcome-heart {
   opacity: 0;
-
-  transform: translateY(70px);
-
-  display: flex;
-
-  justify-content: center;
-
-  margin-bottom: 40px;
+  transform: translateY(40px);
 }

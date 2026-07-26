@@ -252,25 +252,27 @@ body {
 }
 
 .welcome-heart {
-  opacity: 0;
-  transform: translateY(40px);
-  margin-bottom: 45px;
+    opacity: 0;
+    transform: translateY(40px);
+    margin-bottom: 45px;
+
+    animation: welcomeHeartFloat 3s ease-in-out infinite;
 }
 
 .welcome-heart img {
-  width: 120px;
 
-  user-select: none;
+    width:120px;
 
-  pointer-events: none;
+    user-select:none;
 
-  filter: drop-shadow(0 0 20px rgba(240, 84, 84, 0.45))
-    drop-shadow(0 0 45px rgba(247, 29, 76, 0.4))
-    drop-shadow(0 0 90px rgba(245, 2, 2, 0.2));
+    pointer-events:none;
 
-  animation:
-    welcomeHeartFloat 5s ease-in-out infinite,
-    welcomeHeartBeat 3.2s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 20px rgba(240,84,84,.45))
+        drop-shadow(0 0 45px rgba(247,29,76,.40))
+        drop-shadow(0 0 90px rgba(245,2,2,.20));
+
+    animation: welcomeHeartBeat 1.5s ease-in-out infinite;
 }
 
 /* ====================================

@@ -12,7 +12,7 @@ const CONFIG = {
   welcome: {
     title: "Happiest Birthday",
 
-    personName: "❤️ Keerthi ❤️",
+    personName: "🎂 Keerthi 🎂",
 
     subtitle: [
       "A little surprise...🫣",
