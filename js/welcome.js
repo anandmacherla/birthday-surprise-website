@@ -115,5 +115,127 @@ async function startWelcomeScene() {
 }
 
 function startPinkTransition() {
-  console.log("Starting Pink Scene...");
+  const welcome = document.getElementById("welcome-screen");
+  const heart = document.getElementById("transition-heart");
+  const pink = document.getElementById("pink-screen");
+
+  const tl = gsap.timeline();
+
+  // Small pause after typing finishes
+  tl.to({}, { duration: 1 });
+
+  // Fade away the Welcome Screen
+  tl.to(welcome, {
+    opacity: 0,
+
+    duration: 0.35,
+
+    ease: "power2.out",
+  });
+
+  // Prepare Pink Screen behind
+
+  tl.set(pink, {
+    display: "block",
+
+    visibility: "visible",
+
+    pointerEvents: "auto",
+
+    opacity: 0,
+  });
+
+  // Show Transition Heart
+  tl.set(heart, {
+    opacity: 1,
+
+    scale: 1,
+  });
+
+  // First heartbeat
+  tl.to(heart, {
+    scale: 1.1,
+
+    duration: 0.18,
+
+    ease: "power2.out",
+  });
+
+  tl.to(heart, {
+    scale: 1,
+
+    duration: 0.18,
+
+    ease: "power2.in",
+  });
+
+  // Second heartbeat
+  tl.to(heart, {
+    scale: 1.18,
+
+    duration: 0.2,
+
+    ease: "power2.out",
+  });
+
+  tl.to(heart, {
+    scale: 1,
+
+    duration: 0.22,
+
+    ease: "power2.in",
+  });
+
+  tl.to("#transition-heart img", {
+    filter:
+      "drop-shadow(0 0 45px rgba(255,80,160,.75)) \
+         drop-shadow(0 0 120px rgba(255,80,160,.75))",
+
+    duration: 0.35,
+  });
+
+  // ===============================
+  // HEART EXPLOSDES SMOOTHLY
+  // ===============================
+
+  const scales = [
+    1.15, 1.3, 1.5, 1.7, 2, 2.4, 2.9, 3.5, 4.2, 5, 6, 7.2, 8.8, 10.5, 12.5, 15,
+    18, 22, 27, 33, 40,
+  ];
+
+  scales.forEach((value) => {
+    tl.to(heart, {
+      scale: value,
+      duration: 0.02,
+      ease: "power1.in",
+    });
+  });
+
+  // ===============================
+  // SHOW PINK SCREEN
+  // ===============================
+
+  tl.to(
+    pink,
+    {
+      opacity: 1,
+
+      duration: 0.8,
+
+      ease: "power2.out",
+    },
+    "-=0.45",
+  );
+
+  // ===============================
+  // CLEANUP
+  // ===============================
+
+  tl.set(heart, {
+    display: "none",
+  });
+
+  tl.set(welcome, {
+    display: "none",
+  });
 }
