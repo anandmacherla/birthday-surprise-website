@@ -200,7 +200,7 @@ function startPinkTransition() {
 
   const scales = [
     1.15, 1.3, 1.5, 1.7, 2, 2.4, 2.9, 3.5, 4.2, 5, 6, 7.2, 8.8, 10.5, 12.5, 15,
-    16.5,18,19.5,
+    16.5, 18, 19.5,
   ];
 
   scales.forEach((value) => {
@@ -237,5 +237,26 @@ function startPinkTransition() {
 
   tl.set(welcome, {
     display: "none",
+  });
+
+  // =====================================
+  // PINK WORLD ANIMATION
+  // =====================================
+
+  // Couple rises
+  tl.to("#birthday-couple", {
+    opacity: 1,
+    y: -40,
+    duration: 0.9,
+    ease: "back.out(1.7)",
+  });
+
+  // Bounce
+  tl.to("#birthday-couple", {
+    y: -25,
+    duration: 0.2,
+    repeat: 1,
+    yoyo: true,
+    ease: "power1.out",
   });
 }
