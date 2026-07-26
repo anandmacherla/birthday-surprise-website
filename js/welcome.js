@@ -200,13 +200,13 @@ function startPinkTransition() {
 
   const scales = [
     1.15, 1.3, 1.5, 1.7, 2, 2.4, 2.9, 3.5, 4.2, 5, 6, 7.2, 8.8, 10.5, 12.5, 15,
-    18, 22, 27, 33, 40,
+    16.5,18,19.5,
   ];
 
   scales.forEach((value) => {
     tl.to(heart, {
       scale: value,
-      duration: 0.02,
+      duration: 0.01,
       ease: "power1.in",
     });
   });
