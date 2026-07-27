@@ -259,4 +259,243 @@ function startPinkTransition() {
     yoyo: true,
     ease: "power1.out",
   });
+
+  tl.call(() => {
+    const couple = document.getElementById("birthday-couple");
+
+    if (couple) {
+      couple.classList.add("couple-idle");
+    }
+  });
+
+  // =====================================
+  // CONFETTI BURST
+  // =====================================
+
+  tl.call(() => {
+    fireConfetti();
+  });
+
+  // ===============================
+  // TITLE
+  // ===============================
+
+  tl.fromTo(
+    "#excited-title",
+    {
+      opacity: 0,
+      y: 30,
+      scale: 0.9,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.8,
+      ease: "back.out(1.8)",
+    },
+  );
+
+  // ===============================
+  // SUBTITLE
+  // ===============================
+
+  tl.fromTo(
+    "#excited-subtitle",
+    {
+      opacity: 0,
+      y: 20,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power2.out",
+    },
+    "-=0.2",
+  );
+
+  tl.to({}, { duration: 0.4 });
+
+  // =====================================
+  // YES BUTTON
+  // =====================================
+
+  tl.to("#yes-btn", {
+    opacity: 1,
+
+    scale: 1,
+
+    duration: 0.45,
+
+    ease: "back.out(2)",
+  });
+
+  // =====================================
+  // NO BUTTON
+  // =====================================
+
+  tl.to(
+    "#no-btn",
+    {
+      opacity: 1,
+
+      scale: 1,
+
+      duration: 0.45,
+
+      ease: "back.out(2)",
+    },
+    "-=0.2",
+  );
+
+  tl.call(() => {
+    gsap.to("#yes-btn", {
+      scale: 1.08,
+
+      duration: 0.55,
+
+      repeat: -1,
+
+      yoyo: true,
+
+      ease: "power1.inOut",
+    });
+  });
+
+  tl.call(() => {
+    activateNoEscape();
+  });
+
+  tl.call(() => {
+    confetti({
+      particleCount: 140,
+
+      spread: 90,
+
+      startVelocity: 35,
+
+      origin: {
+        x: 0.5,
+        y: 0.32,
+      },
+    });
+  });
+
+  tl.call(() => {
+    startPinkConfetti();
+  });
+}
+
+function startPinkConfetti() {
+  setInterval(() => {
+    confetti({
+      particleCount: 400,
+
+      spread: 360,
+
+      startVelocity: 65,
+
+      gravity: 0.9,
+
+      scalar: 0.8,
+
+      origin: {
+        x: Math.random(),
+
+        y: 0,
+
+        z: 120,
+      },
+    });
+  }, 2500);
+
+  gsap.from("#yes-btn", {
+    scale: 0,
+
+    duration: 0.6,
+
+    ease: "back.out(2)",
+  });
+
+  document.querySelector("#yes-btn").classList.add("yes-heartbeat");
+}
+
+// =====================================
+// CONFETTI
+// =====================================
+
+function fireConfetti() {
+  confetti({
+    particleCount: 700,
+    spread: 360,
+    startVelocity: 65,
+    scalar: 1.2,
+
+    origin: {
+      x: 0.5,
+      y: 0.35,
+    },
+
+    colors: ["#ff5ea8", "#ffca5f", "#8fd3ff", "#8cffc1", "#ffffff", "#dca0ff"],
+
+    zIndex: 999999,
+  });
+}
+
+// =====================================
+// NO BUTTON ESCAPE
+// =====================================
+
+const noMessages = [
+  "Hehe... not this one! 😜",
+
+  "Please don't press NO 🥺",
+
+  "Come on... click YES 💖",
+
+  "Someone is waiting 🐻",
+
+  "Cake is getting cold 🎂",
+
+  "You're making Dudu sad 🥹",
+
+  "Okay okay... just press YES 💕",
+];
+
+let noCounter = 0;
+
+function activateNoEscape() {
+  const no = document.getElementById("no-btn");
+
+  no.addEventListener("mouseenter", () => {
+    gsap.to(no, {
+      x: gsap.utils.random(-220, 220),
+
+      y: gsap.utils.random(-120, 120),
+
+      duration: 0.35,
+
+      ease: "power2.out",
+    });
+
+    const msg = document.getElementById("no-message");
+
+    msg.innerHTML = noMessages[noCounter % noMessages.length];
+
+    gsap.fromTo(
+      msg,
+      {
+        opacity: 0,
+        y: 8,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+      },
+    );
+
+    noCounter++;
+  });
 }
