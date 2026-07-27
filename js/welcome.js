@@ -474,9 +474,22 @@ function activateNoEscape() {
 
       y: gsap.utils.random(-120, 120),
 
+      rotation: gsap.utils.random(-18, 18),
+
+      scale: 0.95,
+
       duration: 0.35,
 
       ease: "power2.out",
+
+      onComplete: () => {
+        gsap.to(no, {
+          rotation: 0,
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.out",
+        });
+      },
     });
 
     const msg = document.getElementById("no-message");
