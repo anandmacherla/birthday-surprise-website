@@ -20,7 +20,7 @@ function createWelcomeStars() {
   }
 }
 
-function typeWriter(element, text, speed = 70) {
+function typeWriter(element, text, speed = 30) {
   return new Promise((resolve) => {
     element.innerHTML = "";
 
@@ -64,51 +64,55 @@ async function startWelcomeScene() {
       opacity: 1,
       scale: 1,
       y: 0,
-      duration: 1.9,
+      duration: 1.2,
       ease: "power3.out",
     },
   );
 
   await tl.then();
 
-  await new Promise((resolve) => setTimeout(resolve, 600));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   await typeWriter(
     document.getElementById("typing-title"),
     CONFIG.welcome.title,
-    80,
+    135,
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1200));
 
   await typeWriter(
     document.getElementById("typing-name"),
     CONFIG.welcome.personName,
-    70,
+    100,
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 1200));
 
   await typeWriter(
     document.querySelector(".sub1"),
     CONFIG.welcome.subtitle[0],
-    45,
+    80,
   );
+
+  await new Promise((resolve) => setTimeout(resolve, 1200));
 
   await typeWriter(
     document.querySelector(".sub2"),
     CONFIG.welcome.subtitle[1],
-    45,
+    70,
   );
+
+  await new Promise((resolve) => setTimeout(resolve, 1200));
 
   await typeWriter(
     document.querySelector(".sub3"),
     CONFIG.welcome.subtitle[2],
-    45,
+    60,
   );
 
   // Let the user enjoy the welcome screen
-  await new Promise((resolve) => setTimeout(resolve, 1200));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   // Start transition to the next scene
   startPinkTransition();
@@ -156,7 +160,7 @@ function startPinkTransition() {
   tl.to(heart, {
     scale: 1.1,
 
-    duration: 0.18,
+    duration: 1,
 
     ease: "power2.out",
   });
@@ -164,7 +168,7 @@ function startPinkTransition() {
   tl.to(heart, {
     scale: 1,
 
-    duration: 0.18,
+    duration: 1,
 
     ease: "power2.in",
   });
@@ -173,7 +177,7 @@ function startPinkTransition() {
   tl.to(heart, {
     scale: 1.18,
 
-    duration: 0.2,
+    duration: 1,
 
     ease: "power2.out",
   });
@@ -181,7 +185,7 @@ function startPinkTransition() {
   tl.to(heart, {
     scale: 1,
 
-    duration: 0.22,
+    duration: 1,
 
     ease: "power2.in",
   });
@@ -247,7 +251,7 @@ function startPinkTransition() {
   tl.to("#birthday-couple", {
     opacity: 1,
     y: -40,
-    duration: 0.9,
+    duration: 1.5,
     ease: "back.out(1.7)",
   });
 
@@ -291,7 +295,7 @@ function startPinkTransition() {
       opacity: 1,
       y: 0,
       scale: 1,
-      duration: 0.8,
+      duration: 2,
       ease: "back.out(1.8)",
     },
   );
@@ -309,13 +313,13 @@ function startPinkTransition() {
     {
       opacity: 1,
       y: 0,
-      duration: 0.6,
+      duration: 2,
       ease: "power2.out",
     },
     "-=0.2",
   );
 
-  tl.to({}, { duration: 0.4 });
+  tl.to({}, { duration: 1 });
 
   // =====================================
   // YES BUTTON
@@ -326,7 +330,7 @@ function startPinkTransition() {
 
     scale: 1,
 
-    duration: 0.45,
+    duration: 0.2,
 
     ease: "back.out(2)",
   });
@@ -353,7 +357,7 @@ function startPinkTransition() {
     gsap.to("#yes-btn", {
       scale: 1.08,
 
-      duration: 0.55,
+      duration: 0.2,
 
       repeat: -1,
 
@@ -413,7 +417,7 @@ function startPinkConfetti() {
   gsap.from("#yes-btn", {
     scale: 0,
 
-    duration: 0.6,
+    duration: 0.2,
 
     ease: "back.out(2)",
   });
@@ -478,7 +482,7 @@ function activateNoEscape() {
 
       scale: 0.95,
 
-      duration: 0.35,
+      duration: 0.4,
 
       ease: "power2.out",
 
@@ -538,7 +542,7 @@ function startBalloonTransition() {
 
   tl.to(couple, {
     y: -40,
-    duration: 0.2,
+    duration: 0.6,
     repeat: 1,
     yoyo: true,
   });
@@ -573,7 +577,7 @@ function startBalloonTransition() {
 
   tl.to("#balloon-screen", {
     opacity: 1,
-    duration: 0.8,
+    duration: 0.2,
     ease: "power2.out",
   });
 

@@ -137,7 +137,7 @@ function popBalloon(balloon) {
   });
 
   if (popped === totalBalloons) {
-    setTimeout(showFinalMessage, 900);
+    setTimeout(showFinalMessage, 3000);
   }
 }
 
@@ -303,7 +303,7 @@ async function showFinalMessage() {
   gsap.to(finalMessage, {
     opacity: 1,
 
-    duration: 0.6,
+    duration: 2,
   });
 
   const finalTitle = document.getElementById("final-title");
@@ -312,15 +312,15 @@ async function showFinalMessage() {
   await typeText(
     finalTitle,
     "Every balloon carried a little piece of my heart... ❤️",
-    40,
+    100,
   );
 
-  await new Promise((r) => setTimeout(r, 500));
+  await new Promise((r) => setTimeout(r, 1200));
 
   await typeText(
     finalSubtitle,
     "Thank you for opening every little surprise. 🥹",
-    28,
+    80,
   );
 
   gsap.fromTo(
