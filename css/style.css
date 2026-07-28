@@ -1156,10 +1156,28 @@ BALLOON SCREEN
 }
 
 @media (max-width: 768px) {
+  .balloon-grid {
+    width: 100%;
+    max-width: 340px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 20px 15px;
+  }
+
+  .balloon {
+    width: 130px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   #final-title {
     font-size: 1.15rem !important;
 
-    line-height: 1.45;
+    line-height: 1.8;
 
     max-width: 92%;
 
@@ -1175,7 +1193,7 @@ BALLOON SCREEN
   }
 
   #final-subtitle {
-    font-size: 0.95rem !important;
+    font-size: 1.3rem !important;
 
     line-height: 1.6;
 
@@ -1189,7 +1207,7 @@ BALLOON SCREEN
 
 @media (max-width: 768px) {
   #popup-message {
-    font-size: 0.9rem !important;
+    font-size: 1.2rem !important;
 
     padding: 10px 16px;
 
