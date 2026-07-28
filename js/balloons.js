@@ -210,14 +210,14 @@ function showPopup(balloon) {
     {
       opacity: 1,
       scale: 1,
-      duration: 0.35,
+      duration: 1.25,
       ease: "back.out(2)",
 
       onComplete() {
         gsap.to(popup, {
           opacity: 0,
           y: -40,
-          delay: 0.8,
+          delay: 1,
           duration: 0.35,
         });
       },
