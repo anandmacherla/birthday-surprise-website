@@ -512,3 +512,73 @@ function activateNoEscape() {
     noCounter++;
   });
 }
+
+// =====================================
+// YES CLICK
+// =====================================
+
+document
+  .getElementById("yes-btn")
+  .addEventListener("click", startBalloonTransition);
+
+// =====================================
+// BALLOON TRANSITION
+// =====================================
+
+function startBalloonTransition() {
+  const pink = document.getElementById("pink-screen");
+
+  const balloons = document.getElementById("balloon-screen");
+
+  const couple = document.getElementById("birthday-couple");
+
+  const tl = gsap.timeline();
+
+  // Happy Jump
+
+  tl.to(couple, {
+    y: -40,
+    duration: 0.2,
+    repeat: 1,
+    yoyo: true,
+  });
+
+  // Celebration Confetti
+
+  tl.call(() => {
+    fireConfetti();
+  });
+
+  // =====================================
+  // FADE PINK SCREEN
+  // =====================================
+
+  tl.to("#pink-screen", {
+    opacity: 0,
+    duration: 0.6,
+  });
+
+  tl.set("#pink-screen", {
+    display: "none",
+  });
+
+  // =====================================
+  // SHOW BALLOON SCREEN
+  // =====================================
+
+  tl.set("#balloon-screen", {
+    display: "block",
+    opacity: 0,
+  });
+
+  tl.to("#balloon-screen", {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.out",
+  });
+
+  // Balloon screen handles itself
+  tl.call(() => {
+    startBalloonScreen();
+  });
+}

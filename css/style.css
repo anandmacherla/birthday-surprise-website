@@ -949,3 +949,194 @@ body {
     font-size: 1rem;
   }
 }
+
+/*===============================
+BALLOON SCREEN
+================================*/
+
+#balloon-screen {
+  position: absolute;
+  inset: 0;
+
+  display: none;
+
+  opacity: 0;
+
+  background: linear-gradient(#fff7fb, #ffd8eb);
+
+  overflow: hidden;
+}
+
+.balloon-header {
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+#balloon-title {
+  font-family: "Pacifico", cursive;
+
+  font-size: 52px;
+
+  color: #b40038;
+
+  text-shadow: 0 4px 16px rgba(255, 120, 170, 0.25);
+
+  margin-bottom: 12px;
+}
+
+#balloon-subtitle {
+  font-family: "Poppins";
+
+  font-size: 22px;
+
+  color: #6b1b3a;
+}
+
+.balloon-grid {
+  width: 520px;
+
+  margin: 20px auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px 60px;
+
+  justify-items: center;
+
+  align-items: center;
+}
+
+.balloon {
+  width: 220px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 20;
+}
+
+.balloon:hover {
+  transform: scale(1.05);
+}
+
+#popup-message {
+  position: fixed;
+
+  z-index: 9999;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  color: #770309;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  text-align: center;
+
+  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.85);
+}
+
+#final-message {
+  display: none;
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  font-family: "Dancing Script", cursive;
+
+  color: #9b0036;
+
+  opacity: 0;
+
+  z-index: 100;
+}
+
+#final-message h2 {
+  font-size: 56px;
+
+  margin-bottom: 20px;
+
+  color: #a1164a;
+}
+
+#final-message p {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 24px;
+
+  color: #6d2140;
+
+  margin-bottom: 40px;
+}
+
+#continue-btn {
+  padding: 18px 42px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background: #c81d5a;
+
+  color: white;
+
+  font-size: 22px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(200, 29, 90, 0.3);
+
+  transition: 0.3s;
+}
+
+#continue-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 16px 36px rgba(200, 29, 90, 0.45);
+}
+
+.balloon-grid {
+  position: relative;
+  z-index: 20;
+}
+
+.balloon {
+  pointer-events: auto;
+}
+
+.balloon-header {
+  position: relative;
+  z-index: 5;
+}
+
+#popup-message {
+  z-index: 40;
+  pointer-events: none;
+}
+
+#final-message {
+  z-index: 50;
+  pointer-events: none;
+}

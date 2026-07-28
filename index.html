@@ -8,9 +8,12 @@
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -182,24 +185,52 @@
       </section>
 
       <!-- ==========================
-             3. Countdown Screen
-        =========================== -->
-      <section id="countdown-screen" class="screen"></section>
-
-      <!-- ==========================
-             4. Birthday Screen
-        =========================== -->
-      <section id="birthday-screen" class="screen"></section>
-
-      <!-- ==========================
-             5. Ready Screen
-        =========================== -->
-      <section id="ready-screen" class="screen"></section>
-
-      <!-- ==========================
              6. Balloon Screen
         =========================== -->
-      <section id="balloon-screen" class="screen"></section>
+
+      <section id="balloon-screen">
+        <div class="balloon-header">
+          <h1 id="balloon-title">🎈 Pop all 4 Balloons 🎈</h1>
+
+          <p id="balloon-subtitle">Each balloon hides a little surprise 💖</p>
+        </div>
+
+        <div class="balloon-grid">
+          <img
+            class="balloon balloon1"
+            src="assets/images/balloons/pink.png"
+            data-msg="💖 You are so special"
+          />
+
+          <img
+            class="balloon balloon2"
+            src="assets/images/balloons/gold.png"
+            data-msg="🌸 Keep smiling always"
+          />
+
+          <img
+            class="balloon balloon3"
+            src="assets/images/balloons/blue.png"
+            data-msg="🎂 Happy Birthday"
+          />
+
+          <img
+            class="balloon balloon4"
+            src="assets/images/balloons/red.png"
+            data-msg="💙 Love You Forever"
+          />
+        </div>
+
+        <div id="popup-message"></div>
+
+        <div id="final-message">
+          <h2 id="final-title"></h2>
+
+          <p id="final-subtitle"></p>
+
+          <button id="continue-btn">Continue ➜</button>
+        </div>
+      </section>
 
       <!-- ==========================
              7. Cake Screen
