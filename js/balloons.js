@@ -292,8 +292,11 @@ async function showFinalMessage() {
 
   gsap.to(".balloon-grid", {
     opacity: 0,
-
     duration: 0.5,
+    onComplete() {
+      const grid = document.querySelector(".balloon-grid");
+      grid.style.pointerEvents = "none";
+    },
   });
 
   gsap.set(finalMessage, {
@@ -323,27 +326,31 @@ async function showFinalMessage() {
     80,
   );
 
-  gsap.fromTo(
-    continueBtn,
-    {
-      opacity: 0,
-      scale: 0.8,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "back.out(2)",
-    },
-  );
+  // Wait before switching screens
+  await new Promise((resolve) => setTimeout(resolve, 2500));
+
+  const balloon = document.getElementById("balloon-screen");
+  const cake = document.getElementById("cake-screen");
+
+  // Hide balloon screen
+  balloon.style.display = "none";
+
+  // Hide final message
+  finalMessage.style.display = "none";
+
+  // Show cake screen
+  cake.style.display = "flex";
+
+  // IMPORTANT: Make it visible
+  gsap.to(cake, {
+    opacity: 1,
+    duration: 0.8,
+  });
+
+  console.log(cake.style.display);
+  console.log(window.getComputedStyle(cake).display);
+  console.log(window.getComputedStyle(cake).opacity);
+
+  // Start cake animation
+  initCakeScreen();
 }
-
-// =====================================
-// CONTINUE
-// =====================================
-
-continueBtn.onclick = () => {
-  console.log("Go to Candle Screen");
-
-  // startCakeTransition();
-};

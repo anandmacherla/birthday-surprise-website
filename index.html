@@ -227,20 +227,57 @@
           <h2 id="final-title"></h2>
 
           <p id="final-subtitle"></p>
-
-          <button id="continue-btn">Continue ➜</button>
         </div>
       </section>
 
       <!-- ==========================
              7. Cake Screen
         =========================== -->
-      <section id="cake-screen" class="screen"></section>
+      <section id="cake-screen">
+        <div id="cake-overlay"></div>
 
-      <!-- ==========================
-             8. Wish Screen
-        =========================== -->
-      <section id="wish-screen" class="screen"></section>
+        <div class="cake-container">
+          <h2 class="wish-title">✨ Make a Wish ✨</h2>
+
+          <p class="wish-subtitle">One more little surprise awaits...</p>
+
+          <div class="cake-wrapper">
+            <img
+              src="assets/images/cake/Cake1.png"
+              class="cake-image active-cake"
+              id="cake1"
+            />
+
+            <img
+              src="assets/images/cake/Cake2-1.png"
+              class="cake-image"
+              id="cake2"
+            />
+
+            <img
+              src="assets/images/cake/Cake2-2.png"
+              class="cake-image"
+              id="cake3"
+            />
+
+            <img
+              src="assets/images/cake/Cake2-3.png"
+              class="cake-image"
+              id="cake4"
+            />
+
+            <img
+              src="assets/images/cake/Cake3.png"
+              class="cake-image"
+              id="cake5"
+            />
+          </div>
+
+          <button id="blowBtn">🕯️ Blow the Candle 🕯️</button>
+
+          <div id="knife"></div>
+        </div>
+      </section>
 
       <!-- ==========================
              9. Bouquet Screen
@@ -278,7 +315,7 @@
     <script src="js/countdown.js"></script>
     <script src="js/birthday.js"></script>
     <script src="js/balloons.js"></script>
-    <script src="js/candle.js"></script>
+    <script src="js/cake.js"></script>
     <script src="js/bouquet.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/letter.js"></script>

@@ -62,3 +62,9 @@ const CONFIG = {
     file: "",
   },
 };
+
+const CAKE = {
+  blowDuration: 1500,
+
+  wishDelay: 2500,
+};

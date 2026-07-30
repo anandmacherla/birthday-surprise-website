@@ -64,7 +64,7 @@ async function startWelcomeScene() {
       opacity: 1,
       scale: 1,
       y: 0,
-      duration: 1.2,
+      duration: 1,
       ease: "power3.out",
     },
   );
@@ -542,7 +542,7 @@ function startBalloonTransition() {
 
   tl.to(couple, {
     y: -40,
-    duration: 0.6,
+    duration: 0.5,
     repeat: 1,
     yoyo: true,
   });
@@ -559,7 +559,7 @@ function startBalloonTransition() {
 
   tl.to("#pink-screen", {
     opacity: 0,
-    duration: 0.6,
+    duration: 0.2,
   });
 
   tl.set("#pink-screen", {

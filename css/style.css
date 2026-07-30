@@ -21,8 +21,20 @@ body {
   background: linear-gradient(135deg, #050505, #0b0618, #07111d, #050505);
 
   background-size: 300% 300%;
-
+  touch-action: manipulation;
   animation: backgroundMove 15s ease infinite;
+}
+
+img {
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ==========================================
@@ -955,13 +967,9 @@ BALLOON SCREEN
 #balloon-screen {
   position: absolute;
   inset: 0;
-
   display: none;
-
   opacity: 0;
-
   background: linear-gradient(#fff7fb, #ffd8eb);
-
   overflow: hidden;
 }
 
@@ -1085,34 +1093,9 @@ BALLOON SCREEN
   margin-bottom: 40px;
 }
 
-#continue-btn {
-  padding: 18px 42px;
-
-  border: none;
-
-  border-radius: 40px;
-
-  background: #c81d5a;
-
-  color: white;
-
-  font-size: 22px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  box-shadow: 0 10px 30px rgba(200, 29, 90, 0.3);
-
-  transition: 0.3s;
-}
-
-#continue-btn:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 16px 36px rgba(200, 29, 90, 0.45);
+.balloon-grid.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -1231,4 +1214,338 @@ BALLOON SCREEN
 
     white-space: normal;
   }
+}
+
+/* ======================================
+        CAKE SCREEN
+====================================== */
+
+#cake-screen {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+
+  opacity: 0;
+
+  z-index: 70;
+
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #210027, #2f1930);
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* Romantic Overlay */
+
+#cake-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: transparent;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.cake-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 40px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.wish-title {
+  font-size: 3rem;
+
+  color: #f1dde5;
+
+  margin-bottom: 10px;
+
+  margin-top: 25px;
+}
+
+.wish-subtitle {
+  font-size: 1.2rem;
+
+  color: #faa3c8;
+
+  margin-bottom: 40px;
+}
+
+.cake-wrapper {
+  position: relative;
+
+  width: 360px;
+  height: 360px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  filter: drop-shadow(0 0 45px rgba(255, 110, 180, 0.35));
+}
+
+.cake-image {
+  position: absolute;
+
+  width: 320px;
+
+  opacity: 0;
+
+  transform-origin: center center;
+
+  pointer-events: none;
+}
+
+.active-cake {
+  opacity: 1;
+}
+
+/* ======================================
+        BLOW CANDLE BUTTON
+====================================== */
+
+#blowBtn {
+  margin-top: 30px;
+
+  padding: 18px 40px;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff4d88, #ff7eb3);
+
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.45);
+
+  transition: all 0.35s ease;
+
+  animation: floatButton 2.5s ease-in-out infinite;
+}
+
+#blowBtn:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow: 0 15px 40px rgba(255, 90, 150, 0.6);
+}
+
+#blowBtn:active {
+  transform: scale(0.95);
+}
+
+@keyframes floatButton {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+#wishMessage {
+  position: absolute;
+
+  left: 50%;
+
+  top: 52%;
+
+  transform: translate(-50%, -50%);
+
+  width: 70%;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  line-height: 1.8;
+
+  font-weight: 600;
+
+  color: #ffffff;
+
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+
+  z-index: 200;
+
+  pointer-events: none;
+}
+
+#cutCakeBtn {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 70px;
+
+  transform: translateX(-50%);
+
+  transition: 0.3s;
+
+  padding: 14px 28px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  border: none;
+
+  border-radius: 45px;
+
+  background: linear-gradient(135deg, #ff4d88, #ff7eb3);
+
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(255, 80, 150, 0.45);
+
+  z-index: 200;
+}
+
+#cutCakeBtn:hover {
+  transform: translateX(-50%) scale(1.05);
+
+  box-shadow: 0 15px 40px rgba(255, 80, 150, 0.65);
+}
+
+/* ==============================
+        CAKE KNIFE
+============================== */
+
+#knife {
+  position: absolute;
+
+  width: 6px;
+
+  height: 170px;
+
+  background: linear-gradient(to bottom, #ffffff, #d7d7d7);
+
+  border-radius: 5px;
+
+  left: 50%;
+
+  top: -220px;
+
+  transform: translateX(-50%) rotate(8deg);
+
+  opacity: 0;
+
+  z-index: 300;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* =====================================
+        MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+  .wish-title {
+    font-size: 2.2rem;
+
+    margin-top: 40px;
+  }
+
+  .wish-subtitle {
+    font-size: 1rem;
+
+    margin-bottom: 25px;
+  }
+
+  .cake-wrapper {
+    width: 270px;
+
+    height: 280px;
+  }
+
+  .cake-image {
+    width: 240px;
+  }
+
+  #blowBtn {
+    font-size: 18px;
+
+    padding: 14px 28px;
+
+    margin-top: 25px;
+  }
+
+  #wishMessage {
+    width: 90%;
+
+    top: 50%;
+
+    font-size: 22px;
+
+    line-height: 1.6;
+  }
+
+  #cutCakeBtn {
+    width: 85%;
+
+    max-width: 320px;
+
+    font-size: 18px;
+
+    padding: 14px 18px;
+
+    bottom: 40px;
+  }
+
+  #knife {
+    height: 130px;
+  }
+}
+
+/* bouquet-screen transition */
+
+#bouquet-screen{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        180deg,
+        #ffe8f3,
+        #ffd8ec,
+        #ffc7e5
+    );
+
+    opacity:0;
+
+    z-index:80;
 }
