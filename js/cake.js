@@ -570,12 +570,6 @@ function transitionToBouquet() {
     display: "none",
   });
 
-  // Show Bouquet
-  tl.set(bouquetScreen, {
-    display: "flex",
-    opacity: 0,
-  });
-
   tl.to(bouquetScreen, {
     opacity: 1,
     duration: 1,
@@ -584,6 +578,6 @@ function transitionToBouquet() {
 
   // Start Bouquet Animation
   tl.call(() => {
-    startBouquetScreen();
+    showBouquetScreen();
   });
 }
