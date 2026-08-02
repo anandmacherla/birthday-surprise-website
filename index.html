@@ -24,6 +24,11 @@
       rel="stylesheet"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
@@ -305,7 +310,7 @@
           </div>
 
           <div id="lyricHint">
-            💖 Every memory deserves a moment... tap one lyric first. 💕
+            💖 Every memory deserves a moment... Tap one lyric first. 💕
           </div>
 
           <button id="bouquetContinueBtn">Continue ❤️</button>
@@ -325,14 +330,52 @@
       <!-- ==========================
              11. Letter Screen
         =========================== -->
+
       <section id="letter-screen">
-        <h1>💌 Letter Screen Coming...</h1>
+        <!-- Night Background -->
+        <div id="letterBg"></div>
+
+        <!-- Title -->
+        <h1 id="letterTitle">💌 A Message From My Heart</h1>
+
+        <!-- Envelope Area -->
+        <div id="envelopeWrapper">
+          <!-- Closed Envelope -->
+          <img
+            id="envelopeClosed"
+            src="assets/images/envelope/envelope-closed.png"
+            alt="Envelope"
+          />
+        </div>
+
+        <!-- Letter -->
+        <div id="letterPaper">
+          <img id="paperImage" src="assets/images/envelope/letter-paper.png" />
+
+          <img id="heartPin" src="assets/images/envelope/heart-pin.png" />
+
+          <img id="bunny" src="assets/images/envelope/bunny.png" />
+
+          <div id="typedLetter"></div>
+        </div>
+
+        <p id="tapHint">Tap the envelope to open 💖</p>
+
+        <button id="letterContinueBtn">Continue 💗</button>
       </section>
 
       <!-- ==========================
              10. Gallery Screen
         =========================== -->
-      <section id="gallery-screen" class="screen"></section>
+      <section id="gallery-screen">
+        <h1 class="galleryTitle">Some Sweet Moments ❤️</h1>
+
+        <p class="gallerySubtitle">(Swipe the cards)</p>
+
+        <div class="cardStack">
+          <!-- cards generated here -->
+        </div>
+      </section>
 
       <!-- ==========================
              12. Gift Screen

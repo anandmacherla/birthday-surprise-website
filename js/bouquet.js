@@ -324,7 +324,7 @@ function openLyric(card, imageSrc) {
     lyricsOpened = 1;
 
     console.log("FIRST LYRIC OPENED");
-    
+
     const btn = document.getElementById("bouquetContinueBtn");
 
     btn.disabled = false;
@@ -468,7 +468,13 @@ function transitionToLetterScreen() {
   tl.call(() => {
     document.getElementById("bouquet-screen").style.display = "none";
 
+    document.getElementById("confetti-layer").style.display = "none";
+
     // NEXT SCREEN
     showLetterScreen();
   });
+}
+
+function showLetterScreen() {
+  document.getElementById("letter-screen").style.display = "flex";
 }
