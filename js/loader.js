@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  startBackgroundMusic();
+  
   createParticles();
 
   const tl = gsap.timeline();

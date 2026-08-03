@@ -343,10 +343,20 @@ function showNextCard() {
   });
 }
 
-const restartBtn = document.getElementById("restart-btn");
+/*const restartBtn = document.getElementById("restart-btn");
 
 if (restartBtn) {
   restartBtn.addEventListener("click", () => {
     location.reload();
   });
-}
+}*/
+
+document.getElementById("restart-btn").addEventListener("click", () => {
+  bgMusic.pause();
+
+  bgMusic.currentTime = 0;
+
+  bgMusic.play();
+
+  location.reload();
+});
