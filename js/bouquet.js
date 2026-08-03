@@ -323,7 +323,12 @@ function openLyric(card, imageSrc) {
   if (lyricsOpened === 0) {
     lyricsOpened = 1;
 
-    console.log("FIRST LYRIC OPENED");
+    gsap.killTweensOf("#lyricHint");
+
+    gsap.set("#lyricHint", {
+      opacity: 0,
+      display: "none",
+    });
 
     const btn = document.getElementById("bouquetContinueBtn");
 
@@ -401,6 +406,13 @@ function closeLyric(card) {
 
     onComplete: () => {
       popup.style.display = "none";
+
+      if (lyricsOpened === 1) {
+        gsap.set("#lyricHint", {
+          display: "block",
+          opacity: 0,
+        });
+      }
 
       gsap.to(card, {
         opacity: 0,

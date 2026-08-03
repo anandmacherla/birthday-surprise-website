@@ -1653,6 +1653,8 @@ BALLOON SCREEN
 
   bottom: 540px;
 
+  white-space: nowrap;
+
   transform: translateX(-50%);
 
   z-index: 999999;
@@ -1674,8 +1676,30 @@ BALLOON SCREEN
   box-shadow: 0 12px 35px rgba(58, 1, 1, 0.18);
 
   pointer-events: none;
+}
 
-  white-space: nowrap;
+@media (max-width: 768px) {
+  #lyricHint {
+    bottom: 190px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    max-width: 320px;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+
+    white-space: normal;
+
+    text-align: center;
+
+    line-height: 1.4;
+  }
 }
 
 /* ======================================
@@ -1920,17 +1944,19 @@ LETTER SCREEN
 
   top: 40px;
 
-  font-size: 40px;
+  font-size: 30px;
 
   font-family: "Great Vibes", cursive;
 
-  color: #ffffff;
+  color: #f7d4d4;
 
   text-shadow:
     0 0 12px rgba(255, 255, 255, 0.5),
     0 0 25px rgba(255, 170, 220, 0.35);
 
   letter-spacing: 2px;
+
+  pointer-events: none;
 }
 
 /* Envelope */
@@ -1946,6 +1972,8 @@ LETTER SCREEN
     drop-shadow(0 0 50px rgba(255, 200, 230, 0.11));
 
   opacity: 0;
+
+  z-index: 120;
 }
 
 /* Closed */
@@ -1954,6 +1982,9 @@ LETTER SCREEN
   position: absolute;
 
   width: 100%;
+  height: 100%;
+
+  object-fit: contain;
 
   left: 0;
   bottom: 0;
@@ -2048,8 +2079,26 @@ LETTER SCREEN
   transform: translateX(-50%);
   font-size: 22px;
   color: #fff;
-  
+
   z-index: 200;
+}
+
+@media (max-width: 768px) {
+  #tapHint {
+    top: auto;
+
+    bottom: 170px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 20px;
+
+    text-align: center;
+
+    width: 90%;
+  }
 }
 
 #typedLetter {
