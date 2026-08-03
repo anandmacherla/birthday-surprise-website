@@ -207,17 +207,25 @@ function startLetterTyping() {
 
   typed.style.opacity = 1;
 
-  const message = `Dear Keerthi...❤️,
+  const message = `Happy Birthday My Love ❤️
 
-Happy Birthday to someone truly special! 🎂
+Keerthi 👑❤️,
 
-You are sweet, loyal, my rock, and I am so grateful to have you in my life.
+You are my favorite person,
+my safest place,
+and the most beautiful part of my life.
 
-You bring so much happiness wherever you go.
+Thank you for every smile, every laugh,
+and every beautiful memory.
 
-Thank you for being YOU.
+I hope this birthday brings you as much
+happiness as you've brought into mine.
 
-❤️`;
+Happy Birthday once again. 🎂
+
+I Love You Forever. ❤️
+
+— Anand...👑❤️ `;
 
   let i = 0;
 
@@ -317,6 +325,6 @@ function closeLetterScreen() {
     .call(() => {
       document.getElementById("letter-screen").style.display = "none";
 
-      showGalleryScreen();
+      showGallery();
     });
 }

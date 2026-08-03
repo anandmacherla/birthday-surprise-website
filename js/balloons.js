@@ -347,10 +347,6 @@ async function showFinalMessage() {
     duration: 0.8,
   });
 
-  console.log(cake.style.display);
-  console.log(window.getComputedStyle(cake).display);
-  console.log(window.getComputedStyle(cake).opacity);
-
   // Start cake animation
   initCakeScreen();
 }

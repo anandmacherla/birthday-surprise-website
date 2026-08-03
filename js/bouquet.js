@@ -53,8 +53,7 @@ function showBouquetScreen() {
   const continueBtn = document.getElementById("bouquetContinueBtn");
 
   continueBtn.onclick = () => {
-    console.log("lyricsOpened =", lyricsOpened);
-
+  
     if (lyricsOpened === 0) {
       gsap.fromTo(
         continueBtn,

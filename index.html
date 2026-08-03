@@ -210,7 +210,7 @@
           <img
             class="balloon balloon2"
             src="assets/images/balloons/gold.png"
-            data-msg="🌸 Keep smiling always"
+            data-msg="🌸 Keep smiling"
           />
 
           <img
@@ -222,7 +222,7 @@
           <img
             class="balloon balloon4"
             src="assets/images/balloons/red.png"
-            data-msg="💙 Love You Forever"
+            data-msg="💕 Love You Forever"
           />
         </div>
 
@@ -367,14 +367,29 @@
       <!-- ==========================
              10. Gallery Screen
         =========================== -->
+
       <section id="gallery-screen">
-        <h1 class="galleryTitle">Some Sweet Moments ❤️</h1>
+        <!-- Romantic Background -->
+        <div id="gallery-bg"></div>
 
-        <p class="gallerySubtitle">(Swipe the cards)</p>
+        <!-- Floating Hearts -->
+        <div id="gallery-hearts"></div>
 
-        <div class="cardStack">
-          <!-- cards generated here -->
+        <!-- Header -->
+        <div class="gallery-header">
+          <h1 id="galleryTitle">Our Beautiful Journey ❤️</h1>
+
+          <p id="gallerySubtitle">
+            Every memory with you became my favorite memory.
+          </p>
         </div>
+
+        <!-- Card Stack -->
+        <div id="gallery-stack">
+          <!-- Cards will be generated from JS -->
+        </div>
+
+        <div id="gallery-caption"></div>
       </section>
 
       <!-- ==========================
@@ -382,10 +397,38 @@
         =========================== -->
       <section id="gift-screen" class="screen"></section>
 
-      <!-- ==========================
-             13. Final Screen
-        =========================== -->
-      <section id="final-screen" class="screen"></section>
+      <!-- ========================= -->
+      <!-- Final Screen -->
+      <!-- ========================= -->
+      <section id="final-screen" class="screen">
+        <div class="final-container">
+          <h1 class="final-title">Happy Birthday Keerthi ❤️</h1>
+
+          <p class="final-line">
+            Every beautiful memory with you has become a treasure I'll cherish
+            forever.
+          </p>
+
+          <p class="final-line">
+            Thank you for filling my life with love, laughter and endless
+            happiness.
+          </p>
+
+          <h2 class="final-love">I Love You Forever ❤️</h2>
+
+          <div class="final-sign">
+            <span>Forever Yours</span>
+
+            <h3>
+              <span>Anand</span>
+              ❤️
+              <span>Keerthi</span>
+            </h3>
+          </div>
+
+          <button id="restart-btn" class="primary-btn">❤️ Replay 💖</button>
+        </div>
+      </section>
     </div>
 
     <!-- JavaScript -->
