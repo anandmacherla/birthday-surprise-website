@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  startBackgroundMusic();
-  
   createParticles();
 
   const tl = gsap.timeline();
@@ -76,6 +74,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1800);
     }
   }, 35);
+
+  const tapMessage = document.getElementById("tap-to-start");
+  const bgMusic = document.getElementById("bgMusic");
+
+  document.addEventListener(
+    "click",
+    () => {
+      bgMusic.play().catch(() => {});
+
+      gsap.to("#tap-to-start", {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => tapMessage.remove(),
+      });
+    },
+    { once: true },
+  );
 });
 
 function createParticles() {

@@ -1,26 +1,21 @@
-const bgMusic = document.getElementById("bgMusic");
+let bgMusic = null;
 
-function startBackgroundMusic() {
-  if (!bgMusic) return;
+window.addEventListener("DOMContentLoaded", () => {
+    bgMusic = document.getElementById("bgMusic");
 
-  bgMusic.volume = 0;
-
-  bgMusic.play().catch(() => {
-    console.log("Waiting for user interaction...");
-  });
-
-  let volume = 0;
-
-  const fade = setInterval(() => {
-    volume += 0.05;
-
-    bgMusic.volume = Math.min(volume, 0.45);
-
-    if (volume >= 0.45) {
-      clearInterval(fade);
+    if (!bgMusic) {
+        console.log("Audio element not found");
+        return;
     }
-  }, 200);
-}
+
+    bgMusic.volume = 1;
+    bgMusic.loop = true;
+
+    document.addEventListener("click", () => {
+        bgMusic.currentTime = 0;
+        bgMusic.play().catch(() => {});
+    }, { once: true });
+});
 
 document.addEventListener(
   "click",

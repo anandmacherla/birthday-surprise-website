@@ -351,12 +351,15 @@ if (restartBtn) {
   });
 }*/
 
-document.getElementById("restart-btn").addEventListener("click", () => {
-  bgMusic.pause();
+const restartBtn = document.getElementById("restart-btn");
 
-  bgMusic.currentTime = 0;
+if (restartBtn) {
+  restartBtn.addEventListener("click", () => {
+    if (bgMusic) {
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+    }
 
-  bgMusic.play();
-
-  location.reload();
-});
+    location.reload();
+  });
+}
